@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clínica Dental Sonrisa Perfecta - Ofrecemos servicios odontológicos de alta calidad con tecnología avanzada y personal profesional.">
+    <meta name="keywords" content="clínica dental, odontología, dentista, limpieza dental, ortodoncia, blanqueamiento">
+    <title>Clínica Dental Sonrisa Perfecta | Sonrisas Saludables para Toda la Familia</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #3498DB;
+            --accent-color: #E74C3C;
+            --light-bg: #F8F9FA;
+            --text-dark: #333;
+            --text-light: #6C757D;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Header & Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 10px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border-radius: 50px;
+            padding: 8px 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://i.postimg.cc/FK1MWLNh/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 250px 0 50px;
+            text-align: center;
+            width: 1920px;
+            height: 780px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s;
+            animation-fill-mode: both;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #2980B9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--light-bg);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member img:hover {
+            transform: scale(1.05);
+            border-color: var(--secondary-color);
+        }
+        
+        .team-member h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .team-member p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .rating {
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .gallery-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-control {
+            border-radius: 5px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+        
+        /* Map Section */
+        .map {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-widget h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-widget h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-widget ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-widget ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-widget ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-widget ul li a:hover {
+            color: white;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .team-member img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        /* Call Button */
+        .call-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 110px;
+            right: 40px;
+            background-color: var(--accent-color);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .call-float:hover {
+            background-color: #C0392B;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-tooth me-2"></i>Sonrisa Perfecta
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Equipo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-whatsapp" href="https://wa.me/1234567890">
+                            <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Sonrisas Saludables para Toda la Familia</h1>
+            <p>Ofrecemos atención dental de alta calidad con tecnología avanzada y un equipo de expertos comprometidos con tu salud bucal</p>
+            <a href="#contact" class="btn btn-primary-custom btn-lg me-3">
+                <i class="fas fa-calendar-check me-2"></i>Agendar Cita
+            </a>
+            <a href="#services" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-info-circle me-2"></i>Nuestros Servicios
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <p class="section-subtitle">Conoce nuestra historia y compromiso con tu salud bucal</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&h=500&fit=crop" alt="Clínica Dental" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h3>Más de 15 años de experiencia cuidando sonrisas</h3>
+                    <p>En Clínica Dental Sonrisa Perfecta, nos enorgullece ofrecer atención dental integral para toda la familia. Nuestro equipo de profesionales altamente capacitados está comprometido con proporcionar tratamientos de alta calidad en un ambiente cómodo y amigable.</p>
+                    <p>Utilizamos tecnología de vanguardia y técnicas modernas para asegurar que cada paciente reciba el mejor cuidado posible. Desde limpiezas rutinarias hasta procedimientos complejos, estamos aquí para satisfacer todas tus necesidades dentales.</p>
+                    <ul class="list-unstyled mt-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Personal altamente calificado y en constante actualización</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Tecnología dental avanzada</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Atención personalizada para cada paciente</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Instalaciones modernas y cómodas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Ofrecemos una amplia gama de tratamientos dentales</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tooth"></i>
+                        </div>
+                        <h4>Limpieza Dental</h4>
+                        <p>Eliminación profesional de placa y sarro para mantener tus dientes y encías saludables. Recomendamos limpiezas cada 6 meses.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-teeth-open"></i>
+                        </div>
+                        <h4>Blanqueamiento Dental</h4>
+                        <p>Tratamientos avanzados para aclarar el color natural de tus dientes, eliminando manchas y decoloraciones.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-brackets"></i>
+                        </div>
+                        <h4>Ortodoncia</h4>
+                        <p>Corrección de dientes desalineados y maloclusiones con brackets tradicionales o alineadores invisibles.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h4>Carillas Dentales</h4>
+                        <p>Mejora la apariencia de tus dientes con carillas de porcelana ultrafinas que transforman tu sonrisa.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tooth-medical"></i>
+                        </div>
+                        <h4>Implantes Dentales</h4>
+                        <p>Solución permanente y duradera para reemplazar dientes perdidos, restaurando función y estética.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h4>Odontopediatría</h4>
+                        <p>Atención especializada para niños, enfocada en prevenir problemas dentales desde una edad temprana.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Nuestro Equipo</h2>
+                <p class="section-subtitle">Profesionales dedicados a tu salud bucal</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face" alt="Dra. María González">
+                        <h4>Dra. María González</h4>
+                        <p>Cirujana Dentista</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face" alt="Dr. Carlos Rodríguez">
+                        <h4>Dr. Carlos Rodríguez</h4>
+                        <p>Especialista en Ortodoncia</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img src="https://i.postimg.cc/Sx1LrXgV/Dra-Ana-Martinez.jpg" alt="Dra. Ana Martínez">
+                        <h4>Dra. Ana Martínez</h4>
+                        <p>Especialista en Endodoncia</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&fit=crop&crop=face" alt="Dr. Luis Fernández">
+                        <h4>Dr. Luis Fernández</h4>
+                        <p>Especialista en Periodoncia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Testimonios de Pacientes</h2>
+                <p class="section-subtitle">Lo que dicen nuestros pacientes sobre nosotros</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Excelente atención, el personal muy profesional y amable. Me realizaron una limpieza dental y estoy muy satisfecho con los resultados. Definitivamente volveré."</p>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/seed/patient1/100/100.jpg" alt="Paciente">
+                            <div>
+                                <h6 class="mb-0">Roberto Sánchez</h6>
+                                <small>Paciente</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Llevo un año con mi tratamiento de ortodoncia y los resultados han sido increíbles. El Dr. Rodríguez es un excelente profesional y siempre me explica cada paso del proceso."</p>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/seed/patient2/100/100.jpg" alt="Paciente">
+                            <div>
+                                <h6 class="mb-0">Laura Gómez</h6>
+                                <small>Paciente</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Mis hijos siempre han tenido miedo al dentista, pero en esta clínica el trato con niños es maravilloso. Ahora van felices a sus revisiones. ¡Totalmente recomendados!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/seed/patient3/100/100.jpg" alt="Paciente">
+                            <div>
+                                <h6 class="mb-0">Carmen López</h6>
+                                <small>Paciente</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Nuestras Instalaciones</h2>
+                <p class="section-subtitle">Un espacio moderno y cómodo para tu atención dental</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=400&fit=crop" alt="Recepción">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&h=400&fit=crop" alt="Consulta 1">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop" alt="Consulta 2">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=400&fit=crop" alt="Equipamiento">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop" alt="Sala de Espera">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&h=400&fit=crop" alt="Rayos X">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">Agenda tu cita o envíanos tus preguntas</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="contact-info">
+                        <h4 class="mb-4">Información de Contacto</h4>
+                        <div class="contact-item mb-3">
+                            <i class="fas fa-map-marker-alt me-3 text-primary"></i>
+                            <p class="mb-0">Calle de la Sonrisa 123, Colonia Centro<br>Ciudad de México, CP 06000</p>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <i class="fas fa-phone me-3 text-primary"></i>
+                            <p class="mb-0">+52 55 1234 5678</p>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <i class="fas fa-envelope me-3 text-primary"></i>
+                            <p class="mb-0">info@sonrisaperfecta.mx</p>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <i class="fas fa-clock me-3 text-primary"></i>
+                            <p class="mb-0">Lunes a Viernes: 9:00 AM - 7:00 PM<br>Sábados: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <h4 class="mb-4">Agenda tu Cita</h4>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="name" placeholder="Nombre Completo" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="Correo Electrónico" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="tel" class="form-control" id="phone" placeholder="Teléfono" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <select class="form-control" id="service" required>
+                                        <option value="" selected disabled>Selecciona un servicio</option>
+                                        <option value="limpieza">Limpieza Dental</option>
+                                        <option value="blanqueamiento">Blanqueamiento Dental</option>
+                                        <option value="ortodoncia">Ortodoncia</option>
+                                        <option value="carillas">Carillas Dentales</option>
+                                        <option value="implantes">Implantes Dentales</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="date" class="form-control" id="date" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="message" rows="4" placeholder="Mensaje o comentarios adicionales"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Enviar Solicitud
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="map mt-5">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.301294162842!2d-99.133207!3d19.417552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzAzLjIiTiA5OcKwMDgnMDMuNiJX!5e0!3m2!1ses!2smx!4v1234567890" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h4>Clínica Dental Sonrisa Perfecta</h4>
+                        <p>Ofrecemos atención dental de alta calidad con tecnología avanzada y un equipo de expertos comprometidos con tu salud bucal.</p>
+                        <div class="social-icons mt-3">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4>Enlaces Rápidos</h4>
+                        <ul>
+                            <li><a href="#home">Inicio</a></li>
+                            <li><a href="#about">Nosotros</a></li>
+                            <li><a href="#services">Servicios</a></li>
+                            <li><a href="#team">Equipo</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="#">Limpieza Dental</a></li>
+                            <li><a href="#">Blanqueamiento</a></li>
+                            <li><a href="#">Ortodoncia</a></li>
+                            <li><a href="#">Implantes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-widget">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Calle de la Sonrisa 123, Ciudad de México</li>
+                            <li><i class="fas fa-phone me-2"></i> +52 55 1234 5678</li>
+                            <li><i class="fas fa-envelope me-2"></i> info@sonrisaperfecta.mx</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Clínica Dental Sonrisa Perfecta. Todos los derechos reservados. | Desarrollado con <i class="fas fa-heart text-danger"></i> para tu sonrisa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp & Call Buttons -->
+    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+525512345678" class="call-float">
+        <i class="fas fa-phone"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For this demo, we'll just show an alert
+            alert(`Gracias por tu solicitud, ${name}.\n\nHemos recibido tu información y nos pondremos en contacto contigo pronto para confirmar tu cita.\n\nServicio solicitado: ${service}\nFecha preferida: ${date}`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+        });
+        
+        // Set minimum date for appointment booking to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+    </script>
+</body>
+</html>
